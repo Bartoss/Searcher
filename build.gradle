@@ -5,6 +5,11 @@ plugins {
 group 'pl.sarata'
 version '1.0-SNAPSHOT'
 
+jar {
+    manifest{
+        attributes 'Main-Class': 'pl.sarata.Searcher'
+    }
+}
 repositories {
     mavenCentral()
 }
