@@ -6,7 +6,7 @@ public class SearcherTest {
     @Test
     public void noExistingDirectory(){
         try {
-            Searcher.main(new String[]{"src/test/ress"});
+            Searcher.main(new String[]{"Searcher","src/test/ress"});
         } catch (SearcherException e) {
             assertEquals("Can not found directory. Please type correct directory.", e.getMessage());
         }

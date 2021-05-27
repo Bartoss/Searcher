@@ -49,7 +49,6 @@ public class UserInputServiceTest {
         InputStream testInput = new ByteArrayInputStream( data.getBytes("UTF-8") );
         System.setIn(testInput);
         searchedWords = userInputService.readSearchingWords();
-        assertEquals("search> ",out.toString());
         assertEquals(Arrays.asList("the", "text", "you", "want", "to", "send"), searchedWords);
     }
 }

@@ -19,7 +19,7 @@ public class SearchService {
         rankService = new RankService();
         userInputService = new UserInputService();
 
-        String directory = args[0];
+        String directory = args[1];
 
         System.out.println(fileService.showCounterOfFiles(directory, ".txt"));
 
@@ -49,9 +49,13 @@ public class SearchService {
         if(noWordsFound == ranks.size()){
             System.out.println("no matches found");
         }else{
-            ranks.forEach(value->{
-                System.out.println(value);
-            });
+            int limit = 0;
+            for(Rank rank: ranks) {
+                if (limit < 10) {
+                    System.out.println(rank);
+                    limit++;
+                }
+            }
         }
         return false;
     }
