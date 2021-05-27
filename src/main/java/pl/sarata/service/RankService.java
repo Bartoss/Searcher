@@ -3,6 +3,7 @@ package pl.sarata.service;
 import pl.sarata.model.Rank;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -26,10 +27,8 @@ public class RankService {
         BigDecimal sumMatchedWords = new BigDecimal(matchedWords.size());
         BigDecimal score = BigDecimal.ZERO;
         if(!(sumMatchedWords.compareTo(BigDecimal.ZERO) == 0)){
-            score = sumWordsInFile.divide(sumMatchedWords);
+            score = sumMatchedWords.divide(sumWordsInFile, 4, RoundingMode.HALF_UP);
         }
-
-
         rank.setScore(score);
 
         return rank;
