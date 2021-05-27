@@ -1,6 +1,6 @@
-package pl.sarata.service;
+package service;
 
-import pl.sarata.model.Rank;
+import model.Rank;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

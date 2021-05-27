@@ -1,28 +1,27 @@
-package pl.sarata;
+package service;
 
-import pl.sarata.model.Rank;
-import pl.sarata.service.FileService;
-import pl.sarata.service.RankService;
-import pl.sarata.service.UserInputService;
+import exception.SearcherException;
+import model.Rank;
 
 import java.math.BigDecimal;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-public class Searcher {
+public class SearchService {
 
     private static FileService fileService;
     private static RankService rankService;
     private static UserInputService userInputService;
 
-    public static void main(String[] args) {
+    public void execute(String[] args) throws SearcherException {
         fileService = new FileService();
         rankService = new RankService();
         userInputService = new UserInputService();
 
         String directory = args[0];
-        fileService.showCounterOfFiles(directory, ".txt");
+
+        System.out.println(fileService.showCounterOfFiles(directory, ".txt"));
 
         Map<String, List<String>> textMap = fileService.readFile(directory, ".txt");
         while(true){
@@ -31,6 +30,7 @@ public class Searcher {
             }
         }
     }
+
 
     public static boolean calculateResult(Map<String, List<String>> contentOfFiles){
         List<String> wordsSearched = userInputService.readSearchingWords();

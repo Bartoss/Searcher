@@ -1,2 +1,2 @@
-# pl.sarata.Searcher
+# Searcher
 Find worlds in text

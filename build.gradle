@@ -3,11 +3,11 @@ plugins {
 }
 
 group 'pl.sarata'
-version '1.0-SNAPSHOT'
+version '1.0'
 
 jar {
     manifest{
-        attributes 'Main-Class': 'pl.sarata.Searcher'
+        attributes 'Main-Class': 'Searcher'
     }
 }
 repositories {
@@ -17,6 +17,7 @@ repositories {
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    
 }
 
 test {
