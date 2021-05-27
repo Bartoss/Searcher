@@ -4,7 +4,7 @@ import service.SearchService;
 public class Searcher {
     private static SearchService service;
     public static void main(String[] args) throws SearcherException {
-        if(args.length == 0){
+        if(args.length == 1){
             throw new SearcherException("Please type directory to files");
         }
         service = new SearchService();

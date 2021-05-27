@@ -9,16 +9,16 @@ import java.util.List;
 import java.util.Map;
 
 public class SearchService {
-
     private static FileService fileService;
     private static RankService rankService;
     private static UserInputService userInputService;
 
-    public void execute(String[] args) throws SearcherException {
+    public SearchService(){
         fileService = new FileService();
         rankService = new RankService();
         userInputService = new UserInputService();
-
+    }
+    public void execute(String[] args) throws SearcherException {
         String directory = args[1];
 
         System.out.println(fileService.showCounterOfFiles(directory, ".txt"));

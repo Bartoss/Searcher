@@ -18,16 +18,17 @@ public class RankService {
             for(String searchedWord: searchedWords)
                 for(String wordFromFile: wordsInFile){
                 if(searchedWord.equals(wordFromFile)){
+
                     matchedWords.add(searchedWord);
                 }
             }
         }
 
-        BigDecimal sumWordsInFile = new BigDecimal(wordsInFile.size());
+        BigDecimal sumSearchedWords = new BigDecimal(searchedWords.size());
         BigDecimal sumMatchedWords = new BigDecimal(matchedWords.size());
         BigDecimal score = BigDecimal.ZERO;
-        if(!(sumMatchedWords.compareTo(BigDecimal.ZERO) == 0)){
-            score = sumMatchedWords.divide(sumWordsInFile, 4, RoundingMode.HALF_UP);
+        if(!(sumSearchedWords.compareTo(BigDecimal.ZERO) == 0)){
+            score = sumMatchedWords.divide(sumSearchedWords, 4, RoundingMode.HALF_UP);
         }
         rank.setScore(score);
 
